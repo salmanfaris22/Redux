@@ -1,25 +1,23 @@
+
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux';
+import { decrement, incrment, incrment5 } from '../features/counterSlice';
+
 
 const InputChange = () => {
 
-    const input = useSelector((state)=>state.input)
-const dispatch = useDispatch()
+    const {value,value2} = useSelector((state) => state.counter)
+    const dispatch = useDispatch()
 
   return (
     <div>
-        <h1>{input}</h1>
-        <input type="text" 
-        onChange={(e)=>dispatch({
-            type:e.target.value
-        })}
-        
-    />
-    <button 
-    onClick={dispatch({
-        type:"dd"
-    })}
-    >OnSubmit</button>
+      {value}
+
+      <button onClick={()=>dispatch(incrment())}>Increment</button>
+      <button onClick={()=>dispatch(decrement())}>Decrement</button>
+
+      {value2}
+      <button onClick={()=>dispatch(incrment5())}>Increment</button>
     </div>
   )
 }
