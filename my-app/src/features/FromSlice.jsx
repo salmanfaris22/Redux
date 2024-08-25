@@ -6,6 +6,8 @@ const initialState = {
     age:0
 }
 
+
+
 export const FromSlice = createSlice({
    name:"from",
  initialState,

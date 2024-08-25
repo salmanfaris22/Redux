@@ -9,8 +9,12 @@ export  const GetProductAPI = createAsyncThunk("product",async()=>{
             const product =res.data
             return product
 
-            
+
     }catch(err){
         throw err
     }
 }) 
+
+
+
+

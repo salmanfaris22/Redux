@@ -8,10 +8,11 @@ import  productFetchslice  from "../features/ProductfetchSlice";
 
 
 
+
 export const store = configureStore({
     reducer:{
         counter : counterSlice,
-      
+
         from:FromSlice,
         product:productFetchslice
    
