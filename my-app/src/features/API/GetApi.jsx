@@ -20,10 +20,13 @@ export const cartSetItem = async (data) => {
   try {
     const res = await axios.get("http://localhost:3000/user/1");
     const product = res.data.cart;
-
+ 
     const updatecart = {
       ...product,
-      [data.id]: data,
+      [data.id]: {
+        qty:0,
+        ...data
+      },
     };
 
       await axios.patch("http://localhost:3000/user/1", { cart: updatecart });
@@ -46,4 +49,17 @@ export const cartRemoveItem = async (data) => {
       throw err;
     }
   };
+  export const AddQty = async (data) => {
+    try {
+        const res = await axios.get("http://localhost:3000/user/1");
+        const product = res.data.cart;
+     
+        const {[data.id]:Remove,...updatecart} =product
+  
+       
+        
+      } catch (err) {
+        throw err;
+      }
+  }; 
   

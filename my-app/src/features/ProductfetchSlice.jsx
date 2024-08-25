@@ -1,13 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { cartRemoveItem, cartSetItem, GetCartItem, GetProductAPI } from "./API/GetApi";
+import { AddQty, cartRemoveItem, cartSetItem, GetCartItem, GetProductAPI } from "./API/GetApi";
 
 const initialState ={
     loading : false,
     product : [],
     error : null,
     cart:[],
-    totolQty:0,
-    totelPrice:0
+    
 }
 
 export const productFetchslice = createSlice({
@@ -23,7 +22,7 @@ export const productFetchslice = createSlice({
                 state.loading = false;
                 state.product = action.payload.product;
                 state.cart =action.payload.cart
-                console.log(action);
+               
             })
             .addCase(GetProductAPI.rejected, (state, action) => {
                 state.loading = false;
@@ -51,13 +50,18 @@ export const productFetchslice = createSlice({
             cartRemoveItem(item)
             state.cart = state.cart.filter((e)=>e.id !== item.id)
              
+        },
+        addQty:(state,action)=>{
+            const item =action.payload
+            AddQty(item)
+
         }
       }
 })
 
 
 export default productFetchslice.reducer
-export const {AddTocart,removeCart} =productFetchslice.actions
+export const {AddTocart,removeCart,addQty} =productFetchslice.actions
 
 
 

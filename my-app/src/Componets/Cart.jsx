@@ -3,7 +3,7 @@
 
 import { FaTrash } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
-import { removeCart } from '../features/ProductfetchSlice';
+import { addQty, removeCart } from '../features/ProductfetchSlice';
 
 
 
@@ -11,7 +11,6 @@ function Cart() {
 
     const {cart} =useSelector((state)=>state.product)
     const dispatch = useDispatch()
-console.log(cart);
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Cart</h1>
@@ -37,9 +36,9 @@ console.log(cart);
                   >
                     -
                   </button>
-                  <span className="mx-2">{item.quantity}</span>
+                  <span className="mx-2">{item.qty}</span>
                   <button
-                
+                    onClick={()=>dispatch(addQty(item))}
                     className="bg-gray-200 text-gray-500 px-2 py-1 rounded-md"
                   >
                     +
@@ -66,6 +65,7 @@ console.log(cart);
         </div>
       </div>
     </div>
+
   );
 }
 
