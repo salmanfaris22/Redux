@@ -10,7 +10,7 @@ const dispatch =useDispatch()
 
   return (
     <div>
-        name : {name}   || age : {age}
+        name : {name}   | age : {age}
         <input type="text"  value={inputName} onChange={(e)=>setInputName(e.target.value)}/>
         <input type="number"  value={inputAge} onChange={(e)=>setInputAge(e.target.value)}/>
         <button onClick={()=>dispatch(submit({inputName,inputAge}))}>Submit</button>
