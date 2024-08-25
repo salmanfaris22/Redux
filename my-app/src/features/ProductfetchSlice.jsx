@@ -1,35 +1,63 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { GetProductAPI } from "./API/GetApi";
+import { cartRemoveItem, cartSetItem, GetCartItem, GetProductAPI } from "./API/GetApi";
 
 const initialState ={
     loading : false,
     product : [],
     error : null,
+    cart:[],
+    totolQty:0,
+    totelPrice:0
 }
 
 export const productFetchslice = createSlice({
       name:"product",
       initialState,
-      extraReducers:(builder)=>{
+      extraReducers: (builder) => {
+        // Existing cases
         builder
-            .addCase(GetProductAPI.pending,(state)=>{
-                state.loading =true
+            .addCase(GetProductAPI.pending, (state) => {
+                state.loading = true;
             })
-            .addCase(GetProductAPI.fulfilled,(state,action)=>{
-                state.loading =false
-                state.product =action.payload
+            .addCase(GetProductAPI.fulfilled, (state, action) => {
+                state.loading = false;
+                state.product = action.payload.product;
+                state.cart =action.payload.cart
+                console.log(action);
             })
-            .addCase(GetProductAPI.rejected,(state,action)=>{
-                state.loading = false
-                state.error =action.payload
+            .addCase(GetProductAPI.rejected, (state, action) => {
+                state.loading = false;
+                state.error = action.payload;
             })
-
+    
+    }
+    
+     
+     
+     
+     ,
+      reducers:{
+        AddTocart :(state,action)=>{
+            const item = action.payload
+            const extingitem =  state.cart.find((e)=>e.id===item.id)
+            if(!extingitem){
+            
+                 cartSetItem(item)
+                state.cart.push(item)
+            }
+         },
+        removeCart: (state,action)=>{
+            const item =action.payload
+            cartRemoveItem(item)
+            state.cart = state.cart.filter((e)=>e.id !== item.id)
+             
+        }
       }
 })
 
 
 export default productFetchslice.reducer
-
+export const {AddTocart,removeCart} =productFetchslice.actions
 
 
 

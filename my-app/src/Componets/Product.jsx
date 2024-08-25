@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { GetProductAPI } from '../features/API/GetApi'
+
+import { AddTocart } from '../features/ProductfetchSlice'
 
 
 const Product = () => {
@@ -9,13 +10,8 @@ const Product = () => {
 
 
   const dispatch = useDispatch()
-console.log('====================================');
-console.log(product);
-console.log('====================================');
-  useEffect(()=>{
-    dispatch(GetProductAPI())
+
   
-  },[])
  
   return (
     <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3 bg-gray-50 mt-10 '>
@@ -29,7 +25,9 @@ console.log('====================================');
                
                             <div>{e.category}</div>
                             <div>${e.price}</div>
+                       
                         </div>
+                        <button onClick={()=>dispatch(AddTocart(e))} className='h-[40px] p-1 rounded-lg shadow-sm hover:bg-black hover:text-white border-black border'>Add To Cart</button>    
                 </div>
             )
         })

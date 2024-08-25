@@ -2,8 +2,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaHome, FaInfoCircle, FaShoppingCart, FaSignInAlt } from 'react-icons/fa';
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
+    const {cart} =useSelector((state)=>state.product)
   return (
     <nav className="bg-gray-800 text-white p-4">
       <div className="container mx-auto flex justify-between items-center">
@@ -18,7 +20,8 @@ const Navbar = () => {
             <span>About</span>
           </Link>
           <Link to="/cart" className="flex items-center space-x-1">
-            <FaShoppingCart size={20} />
+          {cart.length > 0 && <div className='bg-red-700 p-1 rounded-full'>{cart.length}</div> }
+            <FaShoppingCart size={20} /> 
             <span>Cart</span>
           </Link>
           <Link to="/signin" className="flex items-center space-x-1">
