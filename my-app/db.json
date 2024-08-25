@@ -3,7 +3,29 @@
     {
       "id": "1",
       "name": "salman",
-      "cart":""
+      "cart": {
+        "3": {
+          "id": "3",
+          "name": "Nike X-3 Sh",
+          "description": "Retro-inspired shoes with a comfortable fit and bold design.",
+          "price": 115,
+          "category": "Men",
+          "available_sizes": [
+            "9",
+            "10",
+            "11"
+          ],
+          "brand": "Nike",
+          "image_url": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/3ffcfac2-025a-4107-ac04-5fb938d3a5f6/KILLSHOT+2+LEATHER.png",
+          "in_stock": false,
+          "special_offer": "None",
+          "discount": 0,
+          "warranty": "1 year",
+          "additional_details": "Out of stock. Expected restock in two weeks.",
+          "qty": 1,
+          "qtyPrice": 115
+        }
+      }
     }
   ],
   "item": [

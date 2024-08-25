@@ -1,11 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { AddQty, cartRemoveItem, cartSetItem, GetCartItem, GetProductAPI } from "./API/GetApi";
+import {  AddQty, cartRemoveItem, cartSetItem,  checkOutcart,  GetProductAPI } from "./API/GetApi";
+
 
 const initialState ={
     loading : false,
     product : [],
     error : null,
     cart:[],
+    totel:0
     
 }
 
@@ -22,6 +24,7 @@ export const productFetchslice = createSlice({
                 state.loading = false;
                 state.product = action.payload.product;
                 state.cart =action.payload.cart
+                state.totel = state.cart.reduce((acc,e)=>e.qtyPrice+acc,0)
                
             })
             .addCase(GetProductAPI.rejected, (state, action) => {
@@ -37,31 +40,54 @@ export const productFetchslice = createSlice({
      ,
       reducers:{
         AddTocart :(state,action)=>{
-            const item = action.payload
+            const item = {...action.payload,qty:1,qtyPrice : action.payload.price}
+         
             const extingitem =  state.cart.find((e)=>e.id===item.id)
             if(!extingitem){
             
                  cartSetItem(item)
                 state.cart.push(item)
             }
+            state.totel = state.cart.reduce((acc,e)=>e.qtyPrice+acc,0)
          },
         removeCart: (state,action)=>{
             const item =action.payload
             cartRemoveItem(item)
             state.cart = state.cart.filter((e)=>e.id !== item.id)
+            state.totel = state.cart.reduce((acc,e)=>e.qtyPrice+acc,0)
              
         },
         addQty:(state,action)=>{
             const item =action.payload
-            AddQty(item)
-
+            state.cart= state.cart.map(e => 
+                e.id === item.id 
+                ? { ...item, qty: e.qty + 1 ,qtyPrice:e.qtyPrice+e.price} 
+                : e
+            )
+            state.totel = state.cart.reduce((acc,e)=>e.qtyPrice+acc,0)
+            AddQty(state.cart)
+        },
+        removeQty:(state,action)=>{
+         
+            state.cart = state.cart.map(e=>
+                e.id === action.payload.id 
+                ? {...action.payload,qty:e.qty-1,qtyPrice:e.qtyPrice - e.price}
+                : e
+            )
+            state.totel = state.cart.reduce((acc,e)=>e.qtyPrice+acc,0)
+            AddQty(state.cart)
+        },
+        checkOut :(state)=>{
+            checkOutcart()
+            state.cart = []
+            state.totel = 0
         }
       }
 })
 
 
 export default productFetchslice.reducer
-export const {AddTocart,removeCart,addQty} =productFetchslice.actions
+export const {AddTocart,removeCart,addQty,removeQty,checkOut} =productFetchslice.actions
 
 
 
