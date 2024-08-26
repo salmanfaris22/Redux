@@ -8,6 +8,7 @@ import Cart from './Componets/Cart';
 import { useEffect } from 'react';
 import { GetProductAPI } from './features/API/GetApi';
 import { useDispatch } from 'react-redux';
+import About from './Componets/About';
 
 
 
@@ -28,6 +29,8 @@ const dispatch =useDispatch()
         <Routes>
         <Route path="/"  element={<Product/>}/> 
         <Route path="/cart"  element={<Cart/>}/>
+        <Route path="/about"  element={<About/>}/>
+
       </Routes>
  
 

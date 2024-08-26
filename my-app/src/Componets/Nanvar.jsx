@@ -17,7 +17,7 @@ const Navbar = () => {
           </Link>
           <Link to="/about" className="flex items-center space-x-1">
             <FaInfoCircle size={20} />
-            <span>About</span>
+            <span>Todo</span>
           </Link>
           <Link to="/cart" className="flex items-center space-x-1">
           {cart.length > 0 && <div className='bg-red-700 p-1 rounded-full'>{cart.length}</div> }
