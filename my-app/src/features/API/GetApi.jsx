@@ -33,14 +33,18 @@ export const cartSetItem = async (data) => {
   }
 };
 
-export const cartRemoveItem = async (data) => {
+export const cartRemoveItem = async (item) => {
     try {
       const res = await axios.get("http://localhost:3000/user/1");
-      const product = res.data.cart
-         
-      const {[data.id]:Remove,...updatecart} =product
+      const currentCart = Object.values(res.data.cart).filter((e)=>e.id!==item.id)
+        
+  
      
-        await axios.patch("http://localhost:3000/user/1", { cart: updatecart });
+        await axios.patch("http://localhost:3000/user/1", { cart: currentCart });
+       
+
+        // eslint-disable-next-line no-unused-vars
+        
       
     } catch (err) {
       throw err;

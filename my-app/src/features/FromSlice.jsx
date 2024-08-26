@@ -16,9 +16,7 @@ export const FromSlice = createSlice({
              state.name  = action.payload.inputName
              state.age = action.payload.inputAge
 
-          
-
-        }
+       }
   }
 })
 
