@@ -3,28 +3,30 @@
     {
       "id": "1",
       "name": "salman",
-      "cart": [
-        {
-          "id": "4",
-          "name": "Adidas Clasiic",
-          "description": "Classic design with a timeless look and comfortable fit.",
-          "price": 90,
+      "cart": {
+        "0": {
+          "id": "2",
+          "name": "New Balance",
+          "description": "Modern and stylish shoes with excellent cushioning and support.",
+          "price": 150,
           "category": "Men",
           "available_sizes": [
+            "7",
             "8",
-            "9"
+            "9",
+            "10"
           ],
-          "brand": "Reebok",
-          "image_url": "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/fcf43637c2694ae197a1ab1487a0e8a4_9366/Duramo_RC_Shoes_Green_IE7991_01_standard.jpg",
+          "brand": "New-balance",
+          "image_url": "https://www.newbalance.com/dw/image/v2/AAGI_PRD/on/demandware.static/-/Library-Sites-NBUS-NBCA/default/dw769f9d4b/images/page-designer/2024/July/16130_Comp_X_Womens_Shoes.jpg",
           "in_stock": true,
-          "special_offer": "15% off on your first purchase",
-          "discount": 15,
-          "warranty": "6 months",
-          "additional_details": "Available in various colors and sizes.",
-          "qty": 4,
-          "qtyPrice": 360
+          "special_offer": "Buy one get one 50% off",
+          "discount": 50,
+          "warranty": "1 year",
+          "additional_details": "Available in limited colors. Offer valid while supplies last.",
+          "qty": 6,
+          "qtyPrice": 900
         },
-        {
+        "1": {
           "id": "1",
           "name": "Puma",
           "description": "Comfortable and stylish running shoes with superior cushioning.",
@@ -46,50 +48,69 @@
           "qty": 1,
           "qtyPrice": 180
         },
-        {
-          "id": "2",
-          "name": "New Balance",
-          "description": "Modern and stylish shoes with excellent cushioning and support.",
-          "price": 150,
+        "2": {
+          "id": "6",
+          "name": "Nike Air Force 1",
+          "description": "Iconic design with superior comfort and durability.",
+          "price": 100,
           "category": "Men",
           "available_sizes": [
+            "6",
             "7",
-            "8",
-            "9",
-            "10"
+            "8"
           ],
-          "brand": "New-balance",
-          "image_url": "https://www.newbalance.com/dw/image/v2/AAGI_PRD/on/demandware.static/-/Library-Sites-NBUS-NBCA/default/dw769f9d4b/images/page-designer/2024/July/16130_Comp_X_Womens_Shoes.jpg",
+          "brand": "Nike",
+          "image_url": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-014.jpg",
           "in_stock": true,
-          "special_offer": "Buy one get one 50% off",
-          "discount": 50,
+          "special_offer": "None",
+          "discount": 0,
           "warranty": "1 year",
-          "additional_details": "Available in limited colors. Offer valid while supplies last.",
+          "additional_details": "Regular stock available.",
           "qty": 1,
-          "qtyPrice": 150
+          "qtyPrice": 100
         },
-        {
-          "id": "3",
-          "name": "Nike X-3 Sh",
-          "description": "Retro-inspired shoes with a comfortable fit and bold design.",
-          "price": 115,
+        "3": {
+          "id": "5",
+          "name": "New Balance 990v5",
+          "description": "Premium materials and craftsmanship for optimal comfort.",
+          "price": 175,
           "category": "Men",
           "available_sizes": [
             "9",
             "10",
             "11"
           ],
-          "brand": "Nike",
-          "image_url": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/3ffcfac2-025a-4107-ac04-5fb938d3a5f6/KILLSHOT+2+LEATHER.png",
-          "in_stock": false,
-          "special_offer": "None",
-          "discount": 0,
-          "warranty": "1 year",
-          "additional_details": "Out of stock. Expected restock in two weeks.",
+          "brand": "New Balance",
+          "image_url": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-017.jpg",
+          "in_stock": true,
+          "special_offer": "20% off for a limited time",
+          "discount": 20,
+          "warranty": "2 years",
+          "additional_details": "Special offer ends soon. Free shipping included.",
           "qty": 1,
-          "qtyPrice": 115
+          "qtyPrice": 175
+        },
+        "4": {
+          "id": "4",
+          "name": "Adidas Clasiic",
+          "description": "Classic design with a timeless look and comfortable fit.",
+          "price": 90,
+          "category": "Men",
+          "available_sizes": [
+            "8",
+            "9"
+          ],
+          "brand": "Reebok",
+          "image_url": "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/fcf43637c2694ae197a1ab1487a0e8a4_9366/Duramo_RC_Shoes_Green_IE7991_01_standard.jpg",
+          "in_stock": true,
+          "special_offer": "15% off on your first purchase",
+          "discount": 15,
+          "warranty": "6 months",
+          "additional_details": "Available in various colors and sizes.",
+          "qty": 1,
+          "qtyPrice": 90
         }
-      ]
+      }
     }
   ],
   "item": [

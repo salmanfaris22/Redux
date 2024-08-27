@@ -9,6 +9,7 @@ import { useEffect } from 'react';
 import { GetProductAPI } from './features/API/GetApi';
 import { useDispatch } from 'react-redux';
 import About from './Componets/About';
+import NewTodo from './Componets/NewTodo';
 
 
 
@@ -30,6 +31,7 @@ const dispatch =useDispatch()
         <Route path="/"  element={<Product/>}/> 
         <Route path="/cart"  element={<Cart/>}/>
         <Route path="/about"  element={<About/>}/>
+        <Route path="/signin"  element={<NewTodo/>}/>
 
       </Routes>
  
