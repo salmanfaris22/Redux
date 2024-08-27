@@ -15,7 +15,7 @@ export const productFetchslice = createSlice({
       name:"product",
       initialState,
       extraReducers: (builder) => {
-        // Existing cases
+       
         builder
             .addCase(GetProductAPI.pending, (state) => {
                 state.loading = true;
@@ -32,12 +32,7 @@ export const productFetchslice = createSlice({
                 state.error = action.payload;
             })
     
-    }
-    
-     
-     
-     
-     ,
+    },
       reducers:{
         AddTocart :(state,action)=>{
             const item = {...action.payload,qty:1,qtyPrice : action.payload.price}
@@ -50,12 +45,14 @@ export const productFetchslice = createSlice({
             }
             state.totel = state.cart.reduce((acc,e)=>e.qtyPrice+acc,0)
          },
+
         removeCart: (state,action)=>{
             const item =action.payload
             cartRemoveItem(item)
             state.cart = state.cart.filter((e)=>e.id !== item.id)
             state.totel = state.cart.reduce((acc,e)=>e.qtyPrice+acc,0)
              
+
         },
         addQty:(state,action)=>{
             const item =action.payload
@@ -67,6 +64,7 @@ export const productFetchslice = createSlice({
             state.totel = state.cart.reduce((acc,e)=>e.qtyPrice+acc,0)
             AddQty(state.cart)
         },
+
         removeQty:(state,action)=>{
          
             state.cart = state.cart.map(e=>
@@ -77,6 +75,7 @@ export const productFetchslice = createSlice({
             state.totel = state.cart.reduce((acc,e)=>e.qtyPrice+acc,0)
             AddQty(state.cart)
         },
+        
         checkOut :(state)=>{
             checkOutcart()
             state.cart = []
