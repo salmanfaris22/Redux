@@ -3,31 +3,50 @@
     {
       "id": "1",
       "name": "salman",
-      "cart": {
-        "0": {
-          "id": "29",
-          "name": "NMD_R1",
-          "description": "High-performance running shoes with boost cushioning for a comfortable ride.",
-          "price": 120,
-          "category": "Running",
+      "cart": [
+        {
+          "id": "4",
+          "name": "Adidas Clasiic",
+          "description": "Classic design with a timeless look and comfortable fit.",
+          "price": 90,
+          "category": "Men",
           "available_sizes": [
-            "4",
-            "5",
-            "6",
-            "7",
-            "8"
+            "8",
+            "9"
           ],
-          "brand": "Adidas",
-          "image_url": "https://assets.adidas.com/images/h_320,f_auto,q_auto:sensitive,fl_lossy/99ca762cb9054caf82fbabc500fd146e_9366/NMD_R1_Shoes_Blue_FY9392_01_standard.jpg",
+          "brand": "Reebok",
+          "image_url": "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/fcf43637c2694ae197a1ab1487a0e8a4_9366/Duramo_RC_Shoes_Green_IE7991_01_standard.jpg",
           "in_stock": true,
-          "special_offer": "None",
-          "discount": 0,
-          "warranty": "1 year",
-          "additional_details": "Limited sizes available. Order soon.",
-          "qty": 1,
-          "qtyPrice": 120
+          "special_offer": "15% off on your first purchase",
+          "discount": 15,
+          "warranty": "6 months",
+          "additional_details": "Available in various colors and sizes.",
+          "qty": 4,
+          "qtyPrice": 360
         },
-        "2": {
+        {
+          "id": "1",
+          "name": "Puma",
+          "description": "Comfortable and stylish running shoes with superior cushioning.",
+          "price": 180,
+          "category": "Men",
+          "available_sizes": [
+            "8",
+            "9",
+            "10",
+            "11"
+          ],
+          "brand": "Puma",
+          "image_url": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/396464/07/sv01/fnd/AUS/fmt/png/Palermo-Lth-Unisex-Sneakers",
+          "in_stock": true,
+          "special_offer": "10% off with code BOOST10",
+          "discount": 10,
+          "warranty": "2 years",
+          "additional_details": "Limited stock available. Offer valid until end of month.",
+          "qty": 1,
+          "qtyPrice": 180
+        },
+        {
           "id": "2",
           "name": "New Balance",
           "description": "Modern and stylish shoes with excellent cushioning and support.",
@@ -49,7 +68,7 @@
           "qty": 1,
           "qtyPrice": 150
         },
-        "3": {
+        {
           "id": "3",
           "name": "Nike X-3 Sh",
           "description": "Retro-inspired shoes with a comfortable fit and bold design.",
@@ -69,28 +88,8 @@
           "additional_details": "Out of stock. Expected restock in two weeks.",
           "qty": 1,
           "qtyPrice": 115
-        },
-        "4": {
-          "id": "4",
-          "name": "Adidas Clasiic",
-          "description": "Classic design with a timeless look and comfortable fit.",
-          "price": 90,
-          "category": "Men",
-          "available_sizes": [
-            "8",
-            "9"
-          ],
-          "brand": "Reebok",
-          "image_url": "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/fcf43637c2694ae197a1ab1487a0e8a4_9366/Duramo_RC_Shoes_Green_IE7991_01_standard.jpg",
-          "in_stock": true,
-          "special_offer": "15% off on your first purchase",
-          "discount": 15,
-          "warranty": "6 months",
-          "additional_details": "Available in various colors and sizes.",
-          "qty": 1,
-          "qtyPrice": 90
         }
-      }
+      ]
     }
   ],
   "item": [
